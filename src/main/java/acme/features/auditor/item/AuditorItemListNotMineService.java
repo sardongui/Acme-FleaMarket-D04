@@ -1,4 +1,4 @@
-package acme.features.supplier.items;
+package acme.features.auditor.item;
 
 import java.util.Collection;
 
@@ -6,23 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
-import acme.entities.roles.Supplier;
+import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class SupplierItemListMineService implements AbstractListService<Supplier, Item>{
+public class AuditorItemListNotMineService implements AbstractListService<Auditor, Item>{
 
 	@Autowired
-	SupplierItemRepository repository;
-
+	AuditorItemRepository repository;
+	
 	@Override
 	public boolean authorise(Request<Item> request) {
 		assert request != null;
+
 		return true;
-	
 	}
 
 	@Override
@@ -30,8 +30,9 @@ public class SupplierItemListMineService implements AbstractListService<Supplier
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
-		request.unbind(entity, model, "creationMoment", "title");
+		
+		request.unbind(entity, model, "title", "creationMoment");
+		
 	}
 
 	@Override
@@ -40,10 +41,9 @@ public class SupplierItemListMineService implements AbstractListService<Supplier
 
 		Collection<Item> result;
 		Principal principal;
-		
-		principal =request.getPrincipal();
 
-		result = this.repository.findManyBySupplierId(principal.getActiveRoleId());
+		principal = request.getPrincipal();
+		result = this.repository.findOthersByAuditorId(principal.getActiveRoleId());
 
 		return result;
 	}

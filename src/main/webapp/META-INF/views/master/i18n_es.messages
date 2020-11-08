@@ -85,6 +85,11 @@ master.menu.administrator.chart = Gráfico
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+master.menu.auditor ########################################################
+master.menu.auditor =Auditor
+master.menu.auditor.list-audit-record = List of Audit Record
+master.menu.auditor.list-item = List of Item
+
 master.menu.supplier ########################################################
 
 master.menu.supplier = Proveedor

@@ -1,5 +1,5 @@
 /*
- * Consumer.java
+ * Provider.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -15,8 +15,6 @@ package acme.entities.roles;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
-import org.hibernate.validator.constraints.URL;
-
 import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Supplier extends UserRole {
+public class Auditor extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -33,24 +31,18 @@ public class Supplier extends UserRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	private String				companyName;
+	private String				firm;
 
 	@NotBlank
-	@URL
-	private String				homePage;
-	
-	@NotBlank
-	private String				description;
-
-	@NotBlank
-	private String				itemCategory;
+	private String				responsibilityStatement;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 //	
+//	@NotNull
 //	@Valid
-//	@OneToMany()
-//	private Collection<Item> item;
+//	@OneToMany(mappedBy="auditor")
+//	private AuditRecord auditRecord;
 
 }
