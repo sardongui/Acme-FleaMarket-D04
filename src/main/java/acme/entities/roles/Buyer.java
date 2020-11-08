@@ -12,14 +12,19 @@
 
 package acme.entities.roles;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import acme.entities.creditCards.CreditCard;
+import acme.entities.requests.Request;
 import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,8 +51,17 @@ public class Buyer extends UserRole {
 	@NotBlank
 	private String				deliveryAddress;
 
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+
 	@Valid
 	@OneToOne(optional = false)
 	private CreditCard			creditCard;
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "buyer")
+	private Collection<Request>	requests;
 
 }
