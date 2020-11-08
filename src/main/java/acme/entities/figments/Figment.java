@@ -28,6 +28,7 @@ public class Figment extends DomainEntity{
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
+	@NotNull
 	private Date				creationMoment;
 	
 	@NotBlank
