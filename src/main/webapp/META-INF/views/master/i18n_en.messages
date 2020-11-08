@@ -52,6 +52,7 @@ master.menu.authenticated.list-advertisement = List of Advertisement
 master.menu.authenticated.list-new = List of News
 master.menu.authenticated.list-material-sheet = Material sheets
 master.menu.authenticated.list-tool-sheet = Tool sheets
+master.menu.authenticated.list-items = List of Items
 
 # master.menu.administrator ###################################################
 

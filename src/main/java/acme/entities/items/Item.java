@@ -1,10 +1,13 @@
+
 package acme.entities.items;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,6 +20,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.auditRecords.AuditRecord;
+import acme.entities.requests.Request;
+
 import acme.entities.roles.Supplier;
 import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.datatypes.Money;
@@ -27,49 +32,48 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Item extends DomainEntity{
+public class Item extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
-	
+
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{supplier.item.ticker.pattern}")
-	private String ticker;
-	
+	private String				ticker;
+
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date creationMoment;
-	
+	private Date				creationMoment;
+
 	@NotBlank
-	private String title;
-	
+	private String				title;
+
 	@NotBlank
-	private String itemCategory;
-	
+	private String				itemCategory;
+
 	@NotBlank
-	private String description;
-	
+	private String				description;
+
 	@Valid
 	@NotNull
-	private Money price;
-	
+	private Money				price;
+
 	@URL
-	private String photo;
-	
+	private String				photo;
+
 	@URL
-	private String link;
-	
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	
+
 	@NotNull
 	@Valid
 	@OneToOne
-	private SpecificationSheet specificationSheet;
-	
+	private SpecificationSheet	specificationSheet;
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional=false)
@@ -79,7 +83,10 @@ public class Item extends DomainEntity{
 	@Valid
 	@OneToOne(optional=false)
 	private AuditRecord auditRecord;
-	
-	
-	
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "item")
+	private Collection<Request>	requests;
+
 }

@@ -1,12 +1,9 @@
 
 package acme.entities.news;
 
-import java.util.Collection;
 import java.util.Date;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
@@ -51,8 +48,8 @@ public class New extends DomainEntity {
 	@NotBlank
 	private String				body;
 
-	@ElementCollection(fetch = FetchType.EAGER)
-	public Collection<String>	relatedNews;
+	@URL
+	public String				relatedNews;
 
 	public boolean				confirmed;
 
