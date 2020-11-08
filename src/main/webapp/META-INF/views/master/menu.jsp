@@ -79,6 +79,10 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.supplier" access="hasRole('Supplier')">
+			<acme:menu-suboption code="master.menu.supplier.list-item" action="/supplier/item/list-mine"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

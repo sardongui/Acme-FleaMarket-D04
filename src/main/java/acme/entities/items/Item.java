@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,7 +16,8 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.specificationSheet.SpecificationSheet;
+import acme.entities.roles.Supplier;
+import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -48,7 +50,7 @@ public class Item extends DomainEntity{
 	private String description;
 	
 	@Valid
-	@NotBlank
+	@NotNull
 	private Money price;
 	
 	@URL
@@ -57,8 +59,21 @@ public class Item extends DomainEntity{
 	@URL
 	private String link;
 	
-	@OneToOne
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+	
+	@NotNull
 	@Valid
+	@OneToOne
 	private SpecificationSheet specificationSheet;
+	
+	@NotNull
+	@Valid
+	@ManyToOne(optional=false)
+	private Supplier supplier;
+	
+	
 	
 }

@@ -1,12 +1,12 @@
-package acme.entities.specificationSheet;
+package acme.entities.specificationSheets;
+
 
 import java.util.Collection;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import acme.entities.sections.Section;
 import acme.framework.entities.DomainEntity;
@@ -20,7 +20,11 @@ public class SpecificationSheet extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@Valid
-	private Collection<Section> section;
+	// Relationships ----------------------------------------------------------
+	
+	@NotNull
+	@OneToMany()
+	private Collection<@Valid Section> sections;
+	
+
 }
