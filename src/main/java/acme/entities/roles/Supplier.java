@@ -51,6 +51,6 @@ public class Supplier extends UserRole {
 //	
 //	@Valid
 //	@OneToMany()
-//	private Item item;
+//	private Collection<Item> item;
 
 }

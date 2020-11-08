@@ -39,5 +39,10 @@ public class Auditor extends UserRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+//	
+//	@NotNull
+//	@Valid
+//	@OneToMany(mappedBy="auditor")
+//	private AuditRecord auditRecord;
 
 }
