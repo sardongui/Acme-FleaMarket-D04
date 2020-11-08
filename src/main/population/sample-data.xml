@@ -234,5 +234,141 @@
 		<property name="target" value="https://www.target2.com"/>
 	</bean>
 	
+	<!-- Supplier -->
+
+	<bean name="supplier1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="supplier1" />
+		<property name="password" value="supplier1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Supplier 1" />
+				<property name="surname" value="One" />
+				<property name="email" value="supplier1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="supplier1Supplier" />
+				<ref bean="supplier1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="supplier1Supplier" class="acme.entities.roles.Supplier">
+		<property name="companyName" value="Carrefour" />
+		<property name="homePage" value="https://www.carrefour.es/supermercado"/>
+		<property name="description" value="Carrefour es una cadena multinacional de distribución de origen francés. "/>
+		<property name="itemCategory" value="Alimentación"/>
+		<property name="userAccount" ref="supplier1UserAccount" />
+	</bean>
+
+	<bean name="supplier1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="supplier1UserAccount" />
+	</bean>
+
+	<bean name="supplier2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="supplier2" />
+		<property name="password" value="supplier2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Supplier 2" />
+				<property name="surname" value="One" />
+				<property name="email" value="supplier2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="supplier2Supplier" />
+				<ref bean="supplier2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="supplier2Supplier" class="acme.entities.roles.Supplier">
+		<property name="companyName" value="Company Name 2" />
+		<property name="homePage" value="https://www.elcorteingles.es/electronica/"/>
+		<property name="description" value="es un grupo de distribución mundial con sede en España compuesto por empresas de distintos formatos."/>
+		<property name="itemCategory" value="Electrónica"/>
+		<property name="userAccount" ref="supplier2UserAccount" />
+	</bean>
+
+	<bean name="supplier2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="supplier2UserAccount" />
+	</bean>
+	
+	<!-- Section -->
+	<bean id="section1" class="acme.entities.sections.Section">
+		<property name="indexer" value="1"/>
+		<property name="title" value="section01"/>
+		<property name="description" value="section01"/>
+		<property name="photo" value="https://www.section01.com"/>
+		
+	</bean>
+	
+	<bean id="section2" class="acme.entities.sections.Section">
+		<property name="indexer" value="2"/>
+		<property name="title" value="section02"/>
+		<property name="description" value="section01"/>
+		<property name="photo" value="https://www.section02.com"/>
+		
+	</bean>
+	
+	<bean id="section3" class="acme.entities.sections.Section">
+		<property name="indexer" value="3"/>
+		<property name="title" value="section03"/>
+		<property name="description" value="section01"/>
+		<property name="photo" value="https://www.section03.com"/>
+	
+	</bean>
+	
+	
+	<!-- Specification Sheet -->
+	<bean id="specificationSheet1" class="acme.entities.specificationSheets.SpecificationSheet">
+		<property name="sections">
+			<list>
+				<ref bean="section1" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="specificationSheet2" class="acme.entities.specificationSheets.SpecificationSheet">
+	
+		<property name="sections">
+			<list>
+				<ref bean="section2" />
+				<ref bean="section3" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Item -->
+	<bean id="item1" class="acme.entities.items.Item">
+		<property name="ticker" value="ALI-20-123456"/>
+		<property name="creationMoment" value="2020/11/01 21:30"/>
+		<property name="title" value="Lechuga"/>
+		<property name="itemCategory" value="Alimentación"/>
+		<property name="description" value="Lechuga 01"/>
+		<property name="price" value="2.56€"/>
+		<property name="photo" value="https://www.item01.com"/>
+		<property name="link" value="https://www.item01.com"/>
+		<property name="specificationSheet" ref="specificationSheet1"/>
+		<property name="supplier" ref="supplier1Supplier" />
+	</bean>
+	
+	<bean id="item2" class="acme.entities.items.Item">
+		<property name="ticker" value="ELE-20-000123"/>
+		<property name="creationMoment" value="2020/04/02 12:00"/>
+		<property name="title" value="Ordenador"/>
+		<property name="itemCategory" value="Electrónica"/>
+		<property name="description" value="Descripcion 02"/>
+		<property name="price" value="650€"/>
+		<property name="photo" value="https://www.item02.com"/>
+		<property name="link" value="https://www.item02.com"/>
+		<property name="specificationSheet" ref="specificationSheet2" />
+		<property name="supplier" ref="supplier2Supplier" />
+	</bean>
 	
 </beans>

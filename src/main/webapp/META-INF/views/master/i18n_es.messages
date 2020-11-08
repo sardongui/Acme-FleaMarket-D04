@@ -84,6 +84,11 @@ master.menu.administrator.chart = Gráfico
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+master.menu.supplier ########################################################
+
+master.menu.supplier = Proveedor
+master.menu.supplier.list-item = Lista de Productos
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
