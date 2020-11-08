@@ -13,10 +13,13 @@
 package acme.entities.roles;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.items.Item;
 import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,11 +47,13 @@ public class Supplier extends UserRole {
 
 	@NotBlank
 	private String				itemCategory;
-	
-	
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+	
+	@Valid
+	@OneToMany()
+	private Item item;
 
 }
