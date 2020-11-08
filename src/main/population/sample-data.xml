@@ -114,10 +114,6 @@
 		<property name="moment" value="2020/10/25 10:21"/>
 		<property name="deadline" value="2021/01/15 23:00"/>
 		<property name="body" value="Esto es una novedad de ejemplo (1)"/>
-		<property name="relatedNews">
-			<list>
-			</list>
-		</property>
 		<property name="confirmed" value="true" />
 	</bean>
 	
@@ -128,12 +124,7 @@
 		<property name="moment" value="2020/10/25 10:25"/>
 		<property name="deadline" value="2021/01/01 23:00"/>
 		<property name="body" value="Esto es una novedad de ejemplo (2)"/>
-		<property name="relatedNews">
-			<list>
-				<value>www.related-new1.com</value>
-				<value>www.related-new2.com</value>
-			</list>
-		</property>
+		<property name="relatedNews" value="http://www.related-new1.com" />
 		<property name="confirmed" value="true" />
 	</bean>
 	
@@ -144,11 +135,7 @@
 		<property name="moment" value="2020/10/22 12:00"/>
 		<property name="deadline" value="2021/01/06 23:00"/>
 		<property name="body" value="Esto es una novedad de ejemplo (3)"/>
-		<property name="relatedNews">
-			<list>
-				<value>www.related-new3.com</value>
-			</list>
-		</property>
+		<property name="relatedNews" value="http://www.related-new2.com,http://www.related-new1.com" />
 		<property name="confirmed" value="true" />
 	</bean>
 	
@@ -374,6 +361,11 @@
 		<property name="link" value="https://www.item01.com"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
 		<property name="supplier" ref="supplier1Supplier" />
+		<property name="requests">
+			<list>
+				<ref bean="request1" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="item2" class="acme.entities.items.Item">
@@ -387,6 +379,11 @@
 		<property name="link" value="https://www.item02.com"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
 		<property name="supplier" ref="supplier2Supplier" />
+		<property name="requests">
+			<list>
+				<ref bean="request2" />
+			</list>
+		</property>
 	</bean>
 	
 	<!-- Buyer -->
@@ -415,6 +412,12 @@
 		<property name="deliveryAddress" value="C/Inventada Nº5 2ºB"/>
 		<property name="creditCard" ref="creditCard02" />
 		<property name="userAccount" ref="buyer1UserAccount" />
+		<property name="requests">
+			<list>
+				<ref bean="request1" />
+				<ref bean="request2" />
+			</list>
+		</property>
 	</bean>
 
 	<bean name="buyer1Authenticated" class="acme.framework.entities.Authenticated">
@@ -446,10 +449,31 @@
 		<property name="deliveryAddress" value="C/Otra calle inventada Nº2 5ºC"/>
 		<property name="creditCard" ref="creditCard03" />
 		<property name="userAccount" ref="buyer2UserAccount" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
 	</bean>
 
 	<bean name="buyer2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="buyer2UserAccount" />
+	</bean>
+	
+	<!-- Requests -->
+	<bean id="request1" class="acme.entities.requests.Request">
+		<property name="ticker" value="ALI-20-000001"/>
+		<property name="creation" value="2020/11/04 12:00"/>
+		<property name="quantity" value="2"/>
+		<property name="item" ref="item1" />
+		<property name="buyer" ref="buyer1Buyer" />
+	</bean>
+	
+	<bean id="request2" class="acme.entities.requests.Request">
+		<property name="ticker" value="ELE-20-000002"/>
+		<property name="creation" value="2020/11/04 12:50"/>
+		<property name="quantity" value="1"/>
+		<property name="item" ref="item2" />
+		<property name="buyer" ref="buyer1Buyer" />
 	</bean>
 	
 </beans>
