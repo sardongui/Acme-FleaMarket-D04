@@ -93,6 +93,12 @@ master.menu.buyer ########################################################
 master.menu.buyer = Buyer
 master.menu.buyer.list-request = List of requests
 
+master.menu.auditor ########################################################
+master.menu.auditor =Auditor
+master.menu.auditor.list-audit-record = List of Audit Record
+master.menu.auditor.list-item = List of Item
+master.menu.auditor.list-not-mine-audit-record=List Not Mine Items
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumer

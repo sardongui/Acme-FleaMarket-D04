@@ -1,0 +1,14 @@
+auditor.item.form.label.creationMoment = Creation moment
+auditor.item.form.label.title = Title
+auditor.item.form.label.description = Description
+auditor.item.form.label.ticker = Ticker
+auditor.item.form.label.photo = Photo
+auditor.item.form.label.itemCategory = Category
+auditor.item.form.label.price= Price
+auditor.item.form.label.link= Link Info Additional
+
+auditor.item.list.label.creationMoment=Creation moment
+auditor.item.list.label.title=Title
+
+auditor.audit-record.form.button.list = List of Audit Record
+auditor.item.form.button.return=Return 
