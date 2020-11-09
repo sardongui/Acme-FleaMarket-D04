@@ -30,6 +30,8 @@ public class AuthenticatedItemShowService implements AbstractShowService<Authent
 		assert model != null;
 
 		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
+		model.setAttribute("item", entity.getId());
+		request.setModel(model);
 
 	}
 

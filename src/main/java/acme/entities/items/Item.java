@@ -20,8 +20,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.auditRecords.AuditRecord;
+import acme.entities.forums.Forum;
 import acme.entities.requests.Request;
-
 import acme.entities.roles.Supplier;
 import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.datatypes.Money;
@@ -71,22 +71,27 @@ public class Item extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@OneToOne
+	@OneToOne(optional = false)
 	private SpecificationSheet	specificationSheet;
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional=false)
-	private Supplier supplier;
+	@ManyToOne(optional = false)
+	private Supplier			supplier;
 
 	@NotNull
 	@Valid
-	@OneToOne(optional=false)
-	private AuditRecord auditRecord;
+	@OneToOne(optional = false)
+	private AuditRecord			auditRecord;
 
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "item")
 	private Collection<Request>	requests;
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	private Forum				forum;
 
 }

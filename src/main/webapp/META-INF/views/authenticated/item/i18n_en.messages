@@ -11,3 +11,5 @@ authenticated.item.list.label.creationMoment= Creation moment
 authenticated.item.list.label.title= Title
 
 authenticated.item.form.button.return= Return 
+
+authenticated.item.form.button.viewMessages = View forum
