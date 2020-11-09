@@ -49,8 +49,8 @@ public class New extends DomainEntity {
 	private String				body;
 
 	@URL
-	public String				relatedNews;
+	private String				relatedNews;
 
-	public boolean				confirmed;
+	private boolean				confirmed;
 
 }

@@ -84,6 +84,10 @@
 		<acme:menu-option code="master.menu.supplier" access="hasRole('Supplier')">
 			<acme:menu-suboption code="master.menu.supplier.list-item" action="/supplier/item/list-mine"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.buyer" access="hasRole('Buyer')">
+			<acme:menu-suboption code="master.menu.buyer.list-request" action="/buyer/request/list-mine"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
