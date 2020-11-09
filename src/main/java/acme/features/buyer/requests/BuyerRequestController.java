@@ -8,14 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
-import acme.entities.requests.Request_Entity;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Buyer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/buyer/request/")
-public class BuyerRequestController extends AbstractController<Buyer, Request_Entity> {
+@RequestMapping("/buyer/request-entity/")
+public class BuyerRequestController extends AbstractController<Buyer, RequestEntity> {
 
 	// Internal state ---------------------------------------------------------
 

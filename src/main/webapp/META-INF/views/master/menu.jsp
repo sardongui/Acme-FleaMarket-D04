@@ -86,7 +86,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.buyer" access="hasRole('Buyer')">
-			<acme:menu-suboption code="master.menu.buyer.list-request" action="/buyer/request/list-mine"/>
+			<acme:menu-suboption code="master.menu.buyer.list-request" action="/buyer/request-entity/list-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

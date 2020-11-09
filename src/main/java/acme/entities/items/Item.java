@@ -19,7 +19,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.requests.Request_Entity;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.datatypes.Money;
@@ -80,6 +80,6 @@ public class Item extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "item")
-	private Collection<Request_Entity>	requests;
+	private Collection<RequestEntity>	requests;
 
 }
