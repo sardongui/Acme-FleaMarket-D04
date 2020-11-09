@@ -20,7 +20,6 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.auditRecords.AuditRecord;
-import acme.entities.forums.Forum;
 import acme.entities.requests.Request;
 import acme.entities.roles.Supplier;
 import acme.entities.specificationSheets.SpecificationSheet;
@@ -88,10 +87,5 @@ public class Item extends DomainEntity {
 	@NotNull
 	@OneToMany(mappedBy = "item")
 	private Collection<Request>	requests;
-
-	@NotNull
-	@Valid
-	@OneToOne(optional = false)
-	private Forum				forum;
 
 }

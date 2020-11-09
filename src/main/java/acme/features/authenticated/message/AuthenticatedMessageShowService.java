@@ -30,8 +30,6 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 		assert model != null;
 
 		request.unbind(entity, model, "creation", "title", "body", "tags");
-		//Integer item = request.getModel().getInteger("item");
-		//System.out.println("ITEM" + item);
 
 	}
 

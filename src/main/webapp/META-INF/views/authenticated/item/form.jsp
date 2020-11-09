@@ -20,6 +20,10 @@
 			action="/authenticated/message/list?item=${item}"
 			/>
 			
+			<acme:form-submit method="get"
+			code="authenticated.item.form.button.newMessage" 
+			action="/authenticated/message/create?item=${item}&forum=${forum}"/>
+			
 	</jstl:if>
 	
 	<acme:form-return code="authenticated.item.form.button.return"/>

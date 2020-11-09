@@ -13,3 +13,4 @@ authenticated.item.list.label.title= Title
 authenticated.item.form.button.return= Return 
 
 authenticated.item.form.button.viewMessages = View forum
+authenticated.item.form.button.newMessage = New forum message

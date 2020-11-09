@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+import acme.features.authenticated.message.AuthenticatedMessageRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -14,7 +15,10 @@ import acme.framework.services.AbstractShowService;
 public class AuthenticatedItemShowService implements AbstractShowService<Authenticated, Item> {
 
 	@Autowired
-	AuthenticatedItemRepository repository;
+	AuthenticatedItemRepository		repository;
+
+	@Autowired
+	AuthenticatedMessageRepository	messageRepository;
 
 
 	@Override
@@ -31,6 +35,9 @@ public class AuthenticatedItemShowService implements AbstractShowService<Authent
 
 		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
 		model.setAttribute("item", entity.getId());
+
+		Integer forum = this.messageRepository.findForumByItemId(entity.getId()).getId();
+		model.setAttribute("forum", forum);
 		request.setModel(model);
 
 	}
