@@ -546,7 +546,7 @@
 	</bean>
 	
 	<!-- Requests -->
-	<bean id="request1" class="acme.entities.requests.Request_Entity">
+	<bean id="request1" class="acme.entities.requests.RequestEntity">
 		<property name="ticker" value="ALI-20-000001"/>
 		<property name="creation" value="2020/11/04 12:00"/>
 		<property name="quantity" value="2"/>
@@ -554,7 +554,7 @@
 		<property name="buyer" ref="buyer1Buyer" />
 	</bean>
 	
-	<bean id="request2" class="acme.entities.requests.Request_Entity">
+	<bean id="request2" class="acme.entities.requests.RequestEntity">
 		<property name="ticker" value="ELE-20-000002"/>
 		<property name="creation" value="2020/11/04 12:50"/>
 		<property name="quantity" value="1"/>
