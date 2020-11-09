@@ -12,8 +12,11 @@
 
 package acme.entities.roles;
 
+
 import javax.persistence.Entity;
+
 import javax.validation.constraints.NotBlank;
+
 
 import org.hibernate.validator.constraints.URL;
 
@@ -48,9 +51,10 @@ public class Supplier extends UserRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-//	
+	
+//	@NotNull
 //	@Valid
 //	@OneToMany()
-//	private Collection<Item> item;
+//	private Collection<Item> items;
 
 }

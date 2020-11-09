@@ -1,4 +1,4 @@
-package acme.feactures.auditor.auditorRecord;
+package acme.features.auditor.auditorRecord;
 
 import java.util.Collection;
 

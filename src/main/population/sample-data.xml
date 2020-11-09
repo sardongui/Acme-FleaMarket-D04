@@ -441,8 +441,8 @@
 		<property name="photo" value="https://www.item01.com"/>
 		<property name="link" value="https://www.item01.com"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
-		<property name="supplier" ref="supplier1Supplier" />
 		<property name="auditRecord" ref="auditRecord2"/>
+		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">
 			<list>
 				<ref bean="request1" />
@@ -460,14 +460,16 @@
 		<property name="photo" value="https://www.item02.com"/>
 		<property name="link" value="https://www.item02.com"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
-		<property name="supplier" ref="supplier2Supplier" />
 		<property name="auditRecord" ref="auditRecord1"/>
+		<property name="supplier" ref="supplier2Supplier"/>
 		<property name="requests">
 			<list>
 				<ref bean="request2" />
 			</list>
 		</property>
 	</bean>
+	
+	
 	
 	<!-- Buyer -->
 	<bean name="buyer1UserAccount" class="acme.framework.entities.UserAccount">

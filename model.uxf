@@ -48,7 +48,7 @@ bg=orange
   </element>
   <element>
     <id>UMLNote</id>
-    <coordinates>
+    <coordinates
       <x>728</x>
       <y>40</y>
       <w>192</w>
@@ -453,11 +453,11 @@ Item
 + ticker: String {Unique,Pattern("^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")}
 + creation: Date {NotNull,Past,Temporal(TIMESTAMP)}
 + title: String {NotBlank}
-+ category: String {NotBlank}
++ itemCategory: String {NotBlank}
 + description: String {NotBlank}
-+ price: Money {NotNull}
++ price: Money {NotNull, Valid}
 + photo: String {URL}
-+ additionalInfo: String {URL}
++ link: String {URL}
 
 
 
@@ -530,7 +530,7 @@ Supplier
 --
 + companyName: String {NotBlank}
 + homePage: String {NotBlank,URL}
-+ category: String {NotBlank}
++ itemCategory: String {NotBlank}
 + description: String {NotBlank}
 
 

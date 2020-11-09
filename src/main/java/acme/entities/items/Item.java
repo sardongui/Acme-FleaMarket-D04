@@ -21,6 +21,8 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.entities.requests.RequestEntity;
 import acme.entities.auditRecords.AuditRecord;
+
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.datatypes.Money;

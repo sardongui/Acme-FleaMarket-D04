@@ -1,4 +1,6 @@
-package acme.feactures.auditor.auditorRecord;
+package acme.features.auditor.auditorRecord;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,10 +9,11 @@ import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractShowService;
+import acme.framework.entities.Principal;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorAuditRecordShowService implements AbstractShowService<Auditor, AuditRecord>{
+public class AuditorAuditRecordListMineService implements AbstractListService<Auditor, AuditRecord>{
 
 	@Autowired
 	AuditorAuditRecordRepository repository;
@@ -19,8 +22,6 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 	public boolean authorise(Request<AuditRecord> request) {
 		assert request != null;
 
-//Hemos quitado la restriccion de solo ver para el usuario que se ha registrado, 
-//porque en el show de list-not-mine no podría ver entonces el AuditRecord
 //		boolean result;
 //		int auditRecordId;
 //		AuditRecord ar;
@@ -35,29 +36,27 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 
 		return true;
 	}
-
+	
 	@Override
 	public void unbind(Request<AuditRecord> request, AuditRecord entity, Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "creationMoment", "status", "body");
+		request.unbind(entity, model, "title", "creationMoment");
 		
 	}
 
 	@Override
-	public AuditRecord findOne(Request<AuditRecord> request) {
+	public Collection<AuditRecord> findMany(Request<AuditRecord> request) {
 		assert request != null;
 
-		AuditRecord result;
-		int id;
+		Collection<AuditRecord> result;
+		Principal principal;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		principal = request.getPrincipal();
+		result = this.repository.findManyByAuditorId(principal.getActiveRoleId());
 
 		return result;
 	}
-
-
 }
