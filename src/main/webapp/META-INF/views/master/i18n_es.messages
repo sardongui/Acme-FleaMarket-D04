@@ -96,6 +96,12 @@ master.menu.supplier ########################################################
 master.menu.supplier = Proveedor
 master.menu.supplier.list-item = Lista de Productos
 master.menu.supplier.list-request = List of Peticiones
+
+master.menu.buyer ########################################################
+
+master.menu.buyer = Comprador
+master.menu.buyer.list-request = Lista de peticiones
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
