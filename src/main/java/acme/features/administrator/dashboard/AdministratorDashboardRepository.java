@@ -1,7 +1,5 @@
 package acme.features.administrator.dashboard;
 
-
-
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
@@ -48,4 +46,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository{
 
 	@Query("select a from Advertisement a")
 	Collection<Advertisement> stddevDiscountAdvertisements();
+
+	@Query("select count(s) from Supplier s")
+	Double numberSuppliers();
+
+	@Query("select count(i) from Item i")
+	Double numberItems();
+
+	@Query("select count(r) from RequestEntity r")
+	Double numberRequests();
+
+	@Query("select count(b) from Buyer b")
+	Double numberBuyers();
 }

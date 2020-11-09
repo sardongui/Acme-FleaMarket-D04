@@ -9,4 +9,7 @@ administrator.dashboard.form.label.averageDiscountAdvertisements = Media del vol
 administrator.dashboard.form.label.averageAverageDiscountAdvertisements = Media del volumen Mediano de descuentos en anuncios
 administrator.dashboard.form.label.averageLargeDiscountAdvertisements = Media del volumen Grande de descuentos en anuncios
 administrator.dashboard.form.label.stddevDiscountAdvertisements = Desviación estándar del volumen de descuentos en anuncios
+administrator.dashboard.form.label.averageItemsPerSupplier = Media del número de Productos por Proveedor
+administrator.dashboard.form.label.averageRequestsPerSupplier = Media del número de Peticiones por Proveedor
+administrator.dashboard.form.label.averageRequestsPerBuyer = Media del número de Peticiones por Comprador
 administrator.dashboard.form.button.return = Volver
