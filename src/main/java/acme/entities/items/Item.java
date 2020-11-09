@@ -70,18 +70,18 @@ public class Item extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@OneToOne
+	@OneToOne(optional = false)
 	private SpecificationSheet	specificationSheet;
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional=false)
-	private Supplier supplier;
+	@ManyToOne(optional = false)
+	private Supplier			supplier;
 
 	@NotNull
 	@Valid
-	@OneToOne(optional=false)
-	private AuditRecord auditRecord;
+	@OneToOne(optional = false)
+	private AuditRecord			auditRecord;
 
 	@Valid
 	@NotNull
