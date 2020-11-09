@@ -24,13 +24,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Request extends DomainEntity {
+public class RequestEntity extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{request.item.ticker.pattern}")
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{buyer.request.ticker.pattern}")
 	private String				ticker;
 
 	@NotNull
@@ -42,7 +42,7 @@ public class Request extends DomainEntity {
 	@Min(0)
 	private Double				quantity;
 
-	public String				notes;
+	private String				notes;
 
 	// Derived attributes -----------------------------------------------------
 

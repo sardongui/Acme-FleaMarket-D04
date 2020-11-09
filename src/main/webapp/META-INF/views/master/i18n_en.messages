@@ -88,6 +88,11 @@ master.menu.supplier ########################################################
 master.menu.supplier =Supplier
 master.menu.supplier.list-item = List of Item
 
+master.menu.buyer ########################################################
+
+master.menu.buyer = Buyer
+master.menu.buyer.list-request = List of requests
+
 master.menu.auditor ########################################################
 master.menu.auditor =Auditor
 master.menu.auditor.list-audit-record = List of Audit Record
