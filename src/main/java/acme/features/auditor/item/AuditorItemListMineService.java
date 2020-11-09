@@ -43,7 +43,7 @@ public class AuditorItemListMineService implements AbstractListService<Auditor, 
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyBySupplierId(principal.getActiveRoleId());
+		result = this.repository.findManyByAuditorId(principal.getActiveRoleId());
 
 		return result;
 	}

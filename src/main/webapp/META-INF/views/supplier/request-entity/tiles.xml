@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 	
-	<definition name="supplier/request/form" extends="master">
-		<put-attribute name="body" type="template" value="../supplier/request/form.jsp"/>
+	<definition name="supplier/request-entity/form" extends="master">
+		<put-attribute name="body" type="template" value="../supplier/request-entity/form.jsp"/>
 	</definition>
 	
-	<definition name="supplier/request/list" extends="master">		
-		<put-attribute name="body" type="template" value="../supplier/request/list.jsp" />
+	<definition name="supplier/request-entity/list" extends="master">		
+		<put-attribute name="body" type="template" value="../supplier/request-entity/list.jsp" />
 	</definition>
 
 </tiles-definitions>

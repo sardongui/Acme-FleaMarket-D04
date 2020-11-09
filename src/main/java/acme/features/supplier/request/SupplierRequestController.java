@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
-import acme.entities.requests.Request_Entity;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/supplier/request/")
-public class SupplierRequestController  extends AbstractController<Supplier, Request_Entity>{
+@RequestMapping("/supplier/request-entity/")
+public class SupplierRequestController  extends AbstractController<Supplier, RequestEntity>{
 
 
 	// Internal state ---------------------------------------------------------

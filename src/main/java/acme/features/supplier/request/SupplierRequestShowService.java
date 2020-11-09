@@ -3,7 +3,7 @@ package acme.features.supplier.request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.requests.Request_Entity;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.framework.components.Model;
 import acme.framework.entities.Principal;
@@ -11,19 +11,19 @@ import acme.framework.services.AbstractShowService;
 import acme.framework.components.Request;
 
 @Service
-public class SupplierRequestShowService implements AbstractShowService<Supplier, Request_Entity>{
+public class SupplierRequestShowService implements AbstractShowService<Supplier, RequestEntity>{
 
 	@Autowired
 	SupplierRequestRepository repository;
 
 
 	@Override
-	public boolean authorise(Request<Request_Entity> request) {
+	public boolean authorise(Request<RequestEntity> request) {
 		assert request != null;
 
 		boolean result;
 		int requestId;
-		Request_Entity r;
+		RequestEntity r;
 		Supplier supplier;
 		Principal principal;
 
@@ -37,7 +37,7 @@ public class SupplierRequestShowService implements AbstractShowService<Supplier,
 	}
 
 	@Override
-	public void unbind(Request<Request_Entity> request, Request_Entity entity, Model model) {
+	public void unbind(Request<RequestEntity> request, RequestEntity entity, Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -47,10 +47,10 @@ public class SupplierRequestShowService implements AbstractShowService<Supplier,
 	}
 
 	@Override
-	public Request_Entity findOne(Request<Request_Entity> request) {
+	public RequestEntity findOne(Request<RequestEntity> request) {
 		assert request != null;
 
-		Request_Entity result;
+		RequestEntity result;
 		int id;
 
 		id = request.getModel().getInteger("id");
