@@ -1,0 +1,10 @@
+supplier.request.form.label.creationMoment = Creation moment
+supplier.request.form.label.title = Title
+supplier.request.form.label.quantity = Quantity
+supplier.request.form.label.ticker = Ticker
+supplier.request.form.label.notes = Notes
+
+supplier.request.list.label.creationMoment=Creation moment
+supplier.request.list.label.title=Title
+
+supplier.request.form.button.return=Return 

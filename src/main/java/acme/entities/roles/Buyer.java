@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import acme.entities.creditCards.CreditCard;
-import acme.entities.requests.Request;
+import acme.entities.requests.Request_Entity;
 import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -62,6 +62,6 @@ public class Buyer extends UserRole {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "buyer")
-	private Collection<Request>	requests;
+	private Collection<Request_Entity>	requests;
 
 }

@@ -1,4 +1,4 @@
-package acme.feactures.auditor.auditorRecord;
+package acme.features.auditor.auditorRecord;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

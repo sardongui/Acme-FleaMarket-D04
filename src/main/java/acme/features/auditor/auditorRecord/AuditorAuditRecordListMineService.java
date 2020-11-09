@@ -1,4 +1,4 @@
-package acme.feactures.auditor.auditorRecord;
+package acme.features.auditor.auditorRecord;
 
 import java.util.Collection;
 
@@ -13,18 +13,30 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorAuditRecordListNotMineService implements AbstractListService<Auditor, AuditRecord>{
+public class AuditorAuditRecordListMineService implements AbstractListService<Auditor, AuditRecord>{
 
 	@Autowired
 	AuditorAuditRecordRepository repository;
-	
+
 	@Override
 	public boolean authorise(Request<AuditRecord> request) {
 		assert request != null;
 
+//		boolean result;
+//		int auditRecordId;
+//		AuditRecord ar;
+//		Auditor auditor;
+//		Principal principal;
+//
+//		auditRecordId = request.getModel().getInteger("id");
+//		ar = this.repository.findOneById(auditRecordId);
+//		auditor = ar.getAuditor();
+//		principal = request.getPrincipal();
+//		result = auditor.getUserAccount().getId() == principal.getAccountId();
+
 		return true;
 	}
-
+	
 	@Override
 	public void unbind(Request<AuditRecord> request, AuditRecord entity, Model model) {
 		assert request != null;
@@ -43,9 +55,8 @@ public class AuditorAuditRecordListNotMineService implements AbstractListService
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findOthersByAuditorId(principal.getActiveRoleId());
+		result = this.repository.findManyBySupplierId(principal.getActiveRoleId());
 
 		return result;
 	}
-
 }

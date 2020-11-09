@@ -441,8 +441,8 @@
 		<property name="photo" value="https://www.item01.com"/>
 		<property name="link" value="https://www.item01.com"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
-		<property name="supplier" ref="supplier1Supplier" />
 		<property name="auditRecord" ref="auditRecord2"/>
+		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">
 			<list>
 				<ref bean="request1" />
@@ -461,14 +461,16 @@
 		<property name="photo" value="https://www.item02.com"/>
 		<property name="link" value="https://www.item02.com"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
-		<property name="supplier" ref="supplier2Supplier" />
 		<property name="auditRecord" ref="auditRecord1"/>
+		<property name="supplier" ref="supplier2Supplier"/>
 		<property name="requests">
 			<list>
 				<ref bean="request2" />
 			</list>
 		</property>
 	</bean>
+	
+	
 	
 	<!-- Buyer -->
 	<bean name="buyer1UserAccount" class="acme.framework.entities.UserAccount">
@@ -544,7 +546,7 @@
 	</bean>
 	
 	<!-- Requests -->
-	<bean id="request1" class="acme.entities.requests.Request">
+	<bean id="request1" class="acme.entities.requests.Request_Entity">
 		<property name="ticker" value="ALI-20-000001"/>
 		<property name="creation" value="2020/11/04 12:00"/>
 		<property name="quantity" value="2"/>
@@ -552,7 +554,7 @@
 		<property name="buyer" ref="buyer1Buyer" />
 	</bean>
 	
-	<bean id="request2" class="acme.entities.requests.Request">
+	<bean id="request2" class="acme.entities.requests.Request_Entity">
 		<property name="ticker" value="ELE-20-000002"/>
 		<property name="creation" value="2020/11/04 12:50"/>
 		<property name="quantity" value="1"/>

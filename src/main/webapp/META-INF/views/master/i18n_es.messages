@@ -87,14 +87,15 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.auditor ########################################################
 master.menu.auditor =Auditor
-master.menu.auditor.list-audit-record = List of Audit Record
-master.menu.auditor.list-item = List of Item
+master.menu.auditor.list-audit-record = Lista de Registros de Auditoría
+master.menu.auditor.list-item = Lista de Productos
+
 
 master.menu.supplier ########################################################
 
 master.menu.supplier = Proveedor
 master.menu.supplier.list-item = Lista de Productos
-
+master.menu.supplier.list-request = List of Peticiones
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
