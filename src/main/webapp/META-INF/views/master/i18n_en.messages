@@ -94,6 +94,12 @@ master.menu.buyer ########################################################
 master.menu.buyer = Buyer
 master.menu.buyer.list-request = List of requests
 
+master.menu.sponsor ########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-banner = Banners
+master.menu.sponsor.create-banner = Create banner
+
 master.menu.auditor ########################################################
 master.menu.auditor =Auditor
 master.menu.auditor.list-audit-record = List of Audit Record

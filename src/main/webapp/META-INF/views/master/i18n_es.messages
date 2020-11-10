@@ -68,8 +68,6 @@ master.menu.administrator.list-material-sheet = Hojas de inventario
 master.menu.administrator.create-material-sheet = Crear hojas de inventario
 master.menu.administrator.list-tool-sheet = Hojas de herramientas
 master.menu.administrator.create-tool-sheet = Crear hojas de herramientas
-master.menu.administrator.list-banner = Banners
-master.menu.administrator.create-banner = Crear banner
 master.menu.administrator.list-suggestion = Sugerencias
 master.menu.administrator.create-suggestion = Crear Sugerencias
 master.menu.administrator.list-figment = Productos
@@ -101,6 +99,12 @@ master.menu.buyer ########################################################
 
 master.menu.buyer = Comprador
 master.menu.buyer.list-request = Lista de peticiones
+
+master.menu.sponsor ########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.list-banner = Banners
+master.menu.sponsor.create-banner = Crear banner
 
 # master.menu.consumer ##########################################################
 
