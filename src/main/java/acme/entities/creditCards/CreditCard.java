@@ -38,7 +38,7 @@ public class CreditCard extends DomainEntity {
 	private Integer				year;
 
 	@NotBlank
-	@Pattern(regexp = "^\\d{3,4}$", message = "{administrator.creditCard.error.cvv}")
+	@Pattern(regexp = "^\\d{3,4}$", message = "{creditCard.error.cvv}")
 	private String				cvv;
 
 }

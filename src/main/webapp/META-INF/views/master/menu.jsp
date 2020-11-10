@@ -57,8 +57,6 @@
 			<acme:menu-suboption code="master.menu.administrator.create-material-sheet" action="/administrator/material-sheet/create"/>
 			<acme:menu-suboption code="master.menu.administrator.list-tool-sheet" action="/administrator/tool-sheet/list"/>
 			<acme:menu-suboption code="master.menu.administrator.create-tool-sheet" action="/administrator/tool-sheet/create"/>
-			<acme:menu-suboption code="master.menu.administrator.list-banner" action="/administrator/banner/list"/>
-			<acme:menu-suboption code="master.menu.administrator.create-banner" action="/administrator/banner/create"/>
 			<acme:menu-suboption code="master.menu.administrator.list-suggestion" action="/administrator/suggestion/list"/>
 			<acme:menu-suboption code="master.menu.administrator.create-suggestion" action="/administrator/suggestion/create"/>
 			<acme:menu-suboption code="master.menu.administrator.list-figment" action="/administrator/figment/list"/>
@@ -94,6 +92,12 @@
 			<acme:menu-suboption code="master.menu.auditor.list-item" action="/auditor/item/list-mine"/>
 			<acme:menu-suboption code="master.menu.auditor.list-not-mine-audit-record" action="/auditor/auditor-record/list-not-mine"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.list-banner" action="/sponsor/banner/list-mine"/>
+			<acme:menu-suboption code="master.menu.sponsor.create-banner" action="/sponsor/banner/create"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
