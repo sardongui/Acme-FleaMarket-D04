@@ -14,7 +14,10 @@
 	<acme:form-url code="auditor.item.form.label.link" path="link"/>
 	
 	<acme:form-submit method="get" code="auditor.audit-record.form.button.list"
-	 	action="/auditor/auditor-record/list-mine"/>
+	 	action="/auditor/audit-record/list-mine"/>
+	
+	<acme:form-submit method="get" code="auditor.audit-record.form.button.listNotMine"
+	 	action="/auditor/audit-record/list-not-mine"/>
 	<acme:form-return code="auditor.item.form.button.return"/>
 	
 	<input id="audit-record" name="audit-record" value="${auditRecord}" type="hidden" />

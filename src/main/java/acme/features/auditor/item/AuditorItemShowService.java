@@ -20,19 +20,20 @@ public class AuditorItemShowService implements AbstractShowService<Auditor, Item
 	public boolean authorise(Request<Item> request) {
 		assert request != null;
 
-		boolean result;
-		int itemId;
-		Item item;
-		Auditor auditor;
-		Principal principal;
+		//Si tengo este codigo de abajo no no se puede realizar el show de los items que no son mios
+//		boolean result;
+//		int itemId;
+//		Item item;
+//		Auditor auditor;
+//		Principal principal;
+//
+//		itemId = request.getModel().getInteger("id");
+//		item = this.repository.findOneById(itemId);
+//		auditor = item.getAuditRecord().getAuditor();
+//		principal = request.getPrincipal();
+//		result = auditor.getUserAccount().getId() == principal.getAccountId();
 
-		itemId = request.getModel().getInteger("id");
-		item = this.repository.findOneById(itemId);
-		auditor = item.getAuditRecord().getAuditor();
-		principal = request.getPrincipal();
-		result = auditor.getUserAccount().getId() == principal.getAccountId();
-
-		return result;
+		return true;
 	}
 
 	@Override

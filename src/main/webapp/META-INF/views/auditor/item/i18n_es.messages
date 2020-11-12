@@ -10,5 +10,6 @@ auditor.item.form.label.link = Link Información Adicional
 auditor.item.list.label.creationMoment=Momento de creación
 auditor.item.list.label.title=Título
 
-auditor.audit-record.form.button.list= Lista de registros de auditoría
+auditor.audit-record.form.button.list= Lista de mis registros de auditoría
+auditor.audit-record.form.button.listNotMine = Lista de otros registros de auditoría
 auditor.item.form.button.return=Atrás 

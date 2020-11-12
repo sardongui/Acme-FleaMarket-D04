@@ -38,5 +38,11 @@ public class Dashboard implements Serializable{
 	Double						stddevADiscountAdvertisements;
 	
 	Double						stddevLDiscountAdvertisements;
+	
+	Double						averageItemsPerSupplier;
+
+	Double						averageRequestsPerSupplier;
+
+	Double						averageRequestsPerBuyer;
 
 }

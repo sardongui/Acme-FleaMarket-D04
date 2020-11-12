@@ -37,7 +37,7 @@ public class AdministratorDashboardShow implements AbstractShowService<Administr
 				"numberSuggestions", "numberFigments", "minDiscountAdvertisements", 
 				"maxDiscountAdvertisements", "averageSmallDiscountAdvertisements", "averageAverageDiscountAdvertisements",
 				"averageLargeDiscountAdvertisements","stddevSDiscountAdvertisements", "stddevADiscountAdvertisements",
-				"stddevLDiscountAdvertisements");
+				"stddevLDiscountAdvertisements", "averageItemsPerSupplier", "averageRequestsPerSupplier", "averageRequestsPerBuyer");
 	}
 
 
@@ -98,6 +98,15 @@ public class AdministratorDashboardShow implements AbstractShowService<Administr
 		}
 		Double stddevLAdv = AdministratorDashboardShow.stdev(maxAndMinLAdv, averageLargeDiscountAdvertisements);
 		res.setStddevLDiscountAdvertisements(stddevLAdv);
+		
+		//D04
+		Double avgItemSupplier = this.repository.numberItems() / this.repository.numberSuppliers();
+		res.setAverageItemsPerSupplier(avgItemSupplier);
+		Double avgRequestSupplier = this.repository.numberRequests() / this.repository.numberSuppliers();
+		res.setAverageRequestsPerSupplier(avgRequestSupplier);
+		Double avgRequestBuyer = this.repository.numberRequests() / this.repository.numberBuyers();
+		res.setAverageRequestsPerBuyer(avgRequestBuyer);
+		
 		return res;
 	}
 

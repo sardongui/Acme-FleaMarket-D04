@@ -30,6 +30,11 @@
 		<canvas id="numberOfAdvertisementsGroupedByDiscount"></canvas>
 	</div>
 	<br></br>
+		<div class="w-100 text-center">
+		<b><acme:message code="administrator.chart.form.label.ratioOfItemsGroupedByItemCategory"/></b>
+		<canvas id="ratioOfItemsGroupedByItemCategory"></canvas>
+	</div>
+	<br></br>
 	
 	<script type ="text/javascript">
 	$(document).ready(function(){
@@ -95,6 +100,34 @@
 					 {
 						 data: [
 							 <jstl:forEach items= "${numberOfAdvertisementsGroupedByDiscount}" var="item">
+							 "<jstl:out value = "${item[1]}" />" ,
+							 </jstl:forEach>
+						 ],
+						 backgroundColor :["blue", "red", "yellow", "green", "purple"]
+					 }
+				 ]
+		 };
+		 var pieChartInvestor = new Chart(CanvasInvestor, {
+			 type: 'pie',
+			 data: DataInvestor
+		 });
+	 });
+	 
+	 $(document).ready(function(){
+		 var CanvasInvestor = document.getElementById("ratioOfItemsGroupedByItemCategory");
+		 Chart.defaults.global.defaultFontFamily = "Modeka";
+		 Chart.defaults.global.defaultFontSize = 15;
+		 
+		 var DataInvestor = {
+				 labels : [
+					 <jstl:forEach items = "${ratioOfItemsGroupedByItemCategory}" var="item">
+					 "<jstl:out value= "${item[0]}" />" ,
+					 </jstl:forEach>
+				 ],
+				 datasets:[
+					 {
+						 data: [
+							 <jstl:forEach items= "${ratioOfItemsGroupedByItemCategory}" var="item">
 							 "<jstl:out value = "${item[1]}" />" ,
 							 </jstl:forEach>
 						 ],

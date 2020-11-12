@@ -17,5 +17,8 @@ public interface AdministratorChartRepository extends AbstractRepository {
 
 	@Query("select a.discounts,count(a) FROM Advertisement a group by a.discounts order by a.discounts")
 	Object[] findAdvertisementByDiscount();
+	
+	@Query("select i.itemCategory,count(i) FROM Item i group by i.itemCategory order by i.itemCategory")
+	Object[] findItemsByCategory();
 
 }

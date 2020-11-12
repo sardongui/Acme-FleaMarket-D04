@@ -18,5 +18,10 @@
     <acme:form-textbox code="administrator.dashboard.form.label.stddevDiscountAdvertisements" path="stddevSDiscountAdvertisements" />
     <acme:form-textbox code="administrator.dashboard.form.label.stddevDiscountAdvertisements" path="stddevADiscountAdvertisements" />
     <acme:form-textbox code="administrator.dashboard.form.label.stddevDiscountAdvertisements" path="stddevLDiscountAdvertisements" />
+    
+    <acme:form-textbox code="administrator.dashboard.form.label.averageItemsPerSupplier" path="averageItemsPerSupplier" /> 
+    <acme:form-textbox code="administrator.dashboard.form.label.averageRequestsPerSupplier" path="averageRequestsPerSupplier" />
+    <acme:form-textbox code="administrator.dashboard.form.label.averageRequestsPerBuyer" path="averageRequestsPerBuyer" />
+    
     <acme:form-return code="administrator.dashboard.form.button.return" />
 </acme:form>
