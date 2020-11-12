@@ -92,7 +92,7 @@
     
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.list-item" action="/auditor/item/list-mine"/>
-			<acme:menu-suboption code="master.menu.auditor.list-not-mine-audit-record" action="/auditor/auditor-record/list-not-mine"/>
+			<acme:menu-suboption code="master.menu.auditor.list-not-mine-audit-record" action="/auditor/item/list-not-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
