@@ -212,7 +212,7 @@
 		<property name="holderName" value="Holder 2" />
 		<property name="brand" value="VISA ORO" />
 		<property name="month" value="02" />
-		<property name="year" value="2024" />
+		<property name="year" value="2019" />
 		<property name="cvv" value="4433" />
 	</bean>
 	
