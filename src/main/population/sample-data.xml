@@ -205,6 +205,7 @@
 		<property name="month" value="08" />
 		<property name="year" value="2028" />
 		<property name="cvv" value="123" />
+		<property name="expired" value="false"/>
 	</bean>
 	
 	<bean id="creditCard02" class="acme.entities.creditCards.CreditCard">
@@ -214,6 +215,7 @@
 		<property name="month" value="02" />
 		<property name="year" value="2019" />
 		<property name="cvv" value="4433" />
+		<property name="expired" value="true"/>
 	</bean>
 	
 	<bean id="creditCard03" class="acme.entities.creditCards.CreditCard">
@@ -223,6 +225,7 @@
 		<property name="month" value="04" />
 		<property name="year" value="2023" />
 		<property name="cvv" value="221" />
+		<property name="expired" value="false"/>
 	</bean>
 	
 	<bean id="creditCard04" class="acme.entities.creditCards.CreditCard">
@@ -232,6 +235,7 @@
 		<property name="month" value="01" />
 		<property name="year" value="2026" />
 		<property name="cvv" value="4900" />
+		<property name="expired" value="false"/>
 	</bean>
 	
 	<!-- Banners -->
@@ -252,6 +256,12 @@
 		<property name="picture" value="https://www.imagen-banner3.com"/>
 		<property name="slogan" value="Otro banner más"/>
 		<property name="target" value="https://www.target3.com"/>
+	</bean>
+	
+	<bean id="banner04" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://www.imagen-banner4.com"/>
+		<property name="slogan" value="Otro banner más"/>
+		<property name="target" value="https://www.target4.com"/>
 	</bean>
 	
 	<!-- Supplier -->
@@ -677,6 +687,73 @@
 
 	<bean name="sponsor2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="sponsor2UserAccount" />
+	</bean>
+	
+	<bean name="sponsor3UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="sponsor3" />
+		<property name="password" value="sponsor3" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Sponsor 3" />
+				<property name="surname" value="Three" />
+				<property name="email" value="sponsor3@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="sponsor3Sponsor" />
+				<ref bean="sponsor3Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sponsor3Sponsor" class="acme.entities.roles.Sponsor">
+		<property name="firmName" value="Gigabyte" />
+		<property name="creditCard" ref="creditCard02" />
+		<property name="userAccount" ref="sponsor3UserAccount" />
+		<property name="banners">
+			<list>
+				<ref bean="banner04" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sponsor3Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="sponsor3UserAccount" />
+	</bean>
+	
+	<bean name="sponsor4UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="sponsor4" />
+		<property name="password" value="sponsor4" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Sponsor 4" />
+				<property name="surname" value="Three" />
+				<property name="email" value="sponsor4@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="sponsor4Sponsor" />
+				<ref bean="sponsor4Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sponsor4Sponsor" class="acme.entities.roles.Sponsor">
+		<property name="firmName" value="Gigabyte" />
+		<property name="userAccount" ref="sponsor4UserAccount" />
+		<property name="banners">
+			<list>
+				
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sponsor4Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="sponsor4UserAccount" />
 	</bean>
 	
 	

@@ -35,6 +35,12 @@
 		<canvas id="ratioOfItemsGroupedByItemCategory"></canvas>
 	</div>
 	<br></br>
+	<br></br>
+		<div class="w-100 text-center">
+		<b><acme:message code="administrator.chart.form.label.ratioOfSponsorsGroupedByCreditCard"/></b>
+		<canvas id="ratioOfSponsorsGroupedByCreditCard"></canvas>
+	</div>
+	<br></br>
 	
 	<script type ="text/javascript">
 	$(document).ready(function(){
@@ -138,6 +144,28 @@
 		 var pieChartInvestor = new Chart(CanvasInvestor, {
 			 type: 'pie',
 			 data: DataInvestor
+		 });
+	 });
+	 
+	 $(document).ready(function(){
+		 var CanvasCompany = document.getElementById("ratioOfSponsorsGroupedByCreditCard");
+		 Chart.defaults.global.defaultFontFamily = "Modeka";
+		 Chart.defaults.global.defaultFontSize = 15;
+			 
+			 var DataCompany = {
+					 labels : ["Have not Credit Card", "Credit Card has not expired", "Credit Card has expired"],
+					 datasets:[
+						 {
+							 data: ["<jstl:out value = '${ratioOfSponsorsGroupedByCreditCard[0][0]}' />",
+								 "<jstl:out value = '${ratioOfSponsorsGroupedByCreditCard[0][1]}' />", 
+								 "<jstl:out value = '${ratioOfSponsorsGroupedByCreditCard[0][2]}' />"],
+							 backgroundColor :["yellow", "green", "red", "blue", "purple"]
+						 }
+					 ]
+			 };
+		 var pieChartCompany = new Chart(CanvasCompany, {
+			 type: 'pie',
+			 data: DataCompany
 		 });
 	 });
 	 
