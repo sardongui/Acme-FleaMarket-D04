@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import acme.entities.items.Item;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
@@ -30,6 +31,9 @@ public class AuditorItemListMineService implements AbstractListService<Auditor, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		
+//		model.setAttribute("myAuditRecord", true);
 		
 		request.unbind(entity, model, "title", "creationMoment");
 		

@@ -12,9 +12,15 @@
 
 package acme.entities.roles;
 
-import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
+import java.util.Collection;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import acme.entities.auditRecords.AuditRecord;
 import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,10 +45,10 @@ public class Auditor extends UserRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-//	
-//	@NotNull
-//	@Valid
-//	@OneToMany(mappedBy="auditor")
-//	private AuditRecord auditRecord;
+	
+	@NotNull
+	@Valid
+	@OneToMany(mappedBy="auditor")
+	private Collection<AuditRecord> auditRecords;
 
 }

@@ -30,7 +30,8 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		assert model != null;
 
 		request.unbind(entity, model, "numberOfNewsGroupedByCategory", "ratioOfWarningNewsVersusRestOfit",
-				"numberOfAdvertisementsGroupedByDiscount", "ratioOfItemsGroupedByItemCategory");
+				"numberOfAdvertisementsGroupedByDiscount", "ratioOfItemsGroupedByItemCategory", 
+				"ratioOfSponsorsGroupedByCreditCard");
 	}
 
 	@Override
@@ -49,6 +50,10 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		
 		Object[] ratioOfItemsGroupedByItemCategory = this.repository.findItemsByCategory();
 		result.setRatioOfItemsGroupedByItemCategory(ratioOfItemsGroupedByItemCategory);
+		
+		Object[] ratioOfSponsorsGroupedByCreditCard = this.repository.findSponsorByCreditCard();
+		result.setRatioOfSponsorsGroupedByCreditCard(ratioOfSponsorsGroupedByCreditCard);
+		
 
 		return result;
 	}

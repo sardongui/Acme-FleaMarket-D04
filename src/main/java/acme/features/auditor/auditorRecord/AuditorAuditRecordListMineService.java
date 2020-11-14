@@ -43,7 +43,9 @@ public class AuditorAuditRecordListMineService implements AbstractListService<Au
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "creationMoment");
+		
+		request.unbind(entity, model, "title", "creationMoment","item.title");
+		
 		
 	}
 

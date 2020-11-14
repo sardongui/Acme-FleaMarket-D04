@@ -6,4 +6,5 @@
 <acme:list>
 	<acme:list-column code="auditor.audit-record.list.label.creationMoment" path="creationMoment" width="20%" />
 	<acme:list-column code="auditor.audit-record.list.label.title" path="title" width="60%" />
+	<acme:list-column code="auditor.audit-record.list.label.item" path="item.title" width="60%" />
 </acme:list>

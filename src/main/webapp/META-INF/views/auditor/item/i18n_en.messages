@@ -9,6 +9,7 @@ auditor.item.form.label.link= Link Info Additional
 
 auditor.item.list.label.creationMoment=Creation moment
 auditor.item.list.label.title=Title
+auditor.item.list.label.auditor =Auditor
 
 auditor.audit-record.form.button.list = List of Audit Record
 auditor.audit-record.form.button.listNotMine = List of others Audit Record

@@ -20,5 +20,7 @@ public interface AdministratorChartRepository extends AbstractRepository {
 	
 	@Query("select i.itemCategory,count(i) FROM Item i group by i.itemCategory order by i.itemCategory")
 	Object[] findItemsByCategory();
-
+	
+	@Query("select count(s), (select count(ss) from Sponsor ss where ss.creditCard.expired='false'), (select count(sss) from Sponsor sss where sss.creditCard.expired='true') from Sponsor s where s.creditCard is null")
+	Object[] findSponsorByCreditCard();
 }
