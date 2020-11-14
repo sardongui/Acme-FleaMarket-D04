@@ -400,7 +400,14 @@
 		<property name="firm" value="Auditor firm" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement"/>
 		<property name="userAccount" ref="auditor1UserAccount" />
+		<property name="auditRecords">
+			<list>
+				<ref bean="auditRecord1" />
+				<ref bean="auditRecord4" />
+			</list>
+		</property>
 	</bean>
+	
 
 	<bean name="auditor1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="auditor1UserAccount" />
@@ -429,6 +436,12 @@
 		<property name="firm" value="Auditor firm 2" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement 2"/>
 		<property name="userAccount" ref="auditor2UserAccount" />
+		<property name="auditRecords">
+			<list>
+				<ref bean="auditRecord2" />
+				<ref bean="auditRecord3" />
+			</list>
+		</property>
 	</bean>
 
 	<bean name="auditor2Authenticated" class="acme.framework.entities.Authenticated">
@@ -444,6 +457,7 @@
 		<property name="status" value="DRAFT"/>
 		<property name="finalMode" value="false"/>
 		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="item" ref="item2"/>
 	</bean>
 	
 	<bean id="auditRecord2" class="acme.entities.auditRecords.AuditRecord">
@@ -453,6 +467,25 @@
 		<property name="status" value="PUBLISHED"/>
 		<property name="finalMode" value="true"/>
 		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="item" ref="item1"/>
+	</bean>
+	<bean id="auditRecord3" class="acme.entities.auditRecords.AuditRecord">
+		<property name="creationMoment" value="2020/04/02 12:00"/>
+		<property name="title" value="Audit Record 3"/>
+		<property name="body" value="Body 3"/>
+		<property name="status" value="DRAFT"/>
+		<property name="finalMode" value="false"/>
+		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="item" ref="item1"/>
+	</bean>
+	<bean id="auditRecord4" class="acme.entities.auditRecords.AuditRecord">
+		<property name="creationMoment" value="2020/04/02 12:00"/>
+		<property name="title" value="Audit Record 4"/>
+		<property name="body" value="Body 2"/>
+		<property name="status" value="DRAFT"/>
+		<property name="finalMode" value="false"/>
+		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="item" ref="item1"/>
 	</bean>
 	
 	<!-- Item -->
@@ -466,7 +499,6 @@
 		<property name="photo" value="https://www.item01.com"/>
 		<property name="link" value="https://www.item01.com"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
-		<property name="auditRecord" ref="auditRecord2"/>
 		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">
 			<list>
@@ -485,7 +517,6 @@
 		<property name="photo" value="https://www.item02.com"/>
 		<property name="link" value="https://www.item02.com"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
-		<property name="auditRecord" ref="auditRecord1"/>
 		<property name="supplier" ref="supplier2Supplier"/>
 		<property name="requests">
 			<list>

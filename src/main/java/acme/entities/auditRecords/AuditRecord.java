@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import acme.entities.items.Item;
 import acme.entities.roles.Auditor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -55,10 +56,10 @@ public class AuditRecord extends DomainEntity{
 	@ManyToOne(optional=false)
 	private Auditor auditor;
 	
-//	@NotNull
-//	@Valid
-//	@OneToOne
-//	private Item item;
+	@NotNull
+	@Valid
+	@ManyToOne(optional=false)
+	private Item item;
 
 
 }

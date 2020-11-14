@@ -7,7 +7,6 @@ import acme.entities.items.Item;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -41,6 +40,22 @@ public class AuditorItemShowService implements AbstractShowService<Auditor, Item
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+//		boolean result;
+//		int itemId;
+//		Item item;
+//		Auditor auditor;
+//		Principal principal;
+//
+//		itemId = request.getModel().getInteger("id");
+//		item = this.repository.findOneById(itemId);
+//		auditor = entity.getAuditRecords().
+//		principal = request.getPrincipal();
+//		result = auditor.getUserAccount().getId() == principal.getAccountId();
+//		
+//		if(model.getAttribute("myAuditRecord").equals(true)) {
+//			model.setAttribute("myAuditRecord", true);
+//		}
 		
 		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
 		
