@@ -1,16 +1,12 @@
 package acme.features.auditor.item;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.auditRecords.AuditRecord;
 import acme.entities.items.Item;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -45,19 +41,11 @@ public class AuditorItemShowService implements AbstractShowService<Auditor, Item
 		assert entity != null;
 		assert model != null;
 		
-		//boolean result;
 		int itemId;
-		Collection<AuditRecord> ar;
-		Principal principal;
-
-		principal = request.getPrincipal();
-		//Auditor auditorId = this.repository.findAuditorById(principal.getActiveRoleId());
 		itemId = request.getModel().getInteger("id");
-		ar = this.repository.findAuditRecordByItemIdAuditorId(itemId, principal.getActiveRoleId());
-			
-		//result = auditor.getUserAccount().getId() == principal.getAccountId();
+		
 		String uri = request.getServletRequest().getHeader("Referer");
-		System.out.println(uri);
+
 		if(uri.contains("list-mine")) {
 			model.setAttribute("myAuditRecord", true);
 		}
