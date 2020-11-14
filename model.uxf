@@ -867,8 +867,8 @@ AuditRecord
       <w>224</w>
       <h>88</h>
     </coordinates>
-    <panel_attributes>lt=-x
-m1= 1
+    <panel_attributes>lt=x-
+m1= 0..*
 m2= 1
 has v</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0;260.0;10.0</additional_attributes>
