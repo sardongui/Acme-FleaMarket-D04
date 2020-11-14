@@ -41,9 +41,12 @@ public class AuditorAuditRecordListNotMineService implements AbstractListService
 
 		Collection<AuditRecord> result;
 		Principal principal;
+		principal = request.getPrincipal();
+		
+		int item = request.getModel().getInteger("item");
 
 		principal = request.getPrincipal();
-		result = this.repository.findOthersByAuditorId(principal.getActiveRoleId());
+		result = this.repository.findManyByNotAuditorIdByItemId(principal.getActiveRoleId(), item);
 
 		return result;
 	}

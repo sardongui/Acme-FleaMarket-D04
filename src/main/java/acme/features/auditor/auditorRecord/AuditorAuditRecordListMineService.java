@@ -46,7 +46,6 @@ public class AuditorAuditRecordListMineService implements AbstractListService<Au
 		
 		request.unbind(entity, model, "title", "creationMoment","item.title");
 		
-		
 	}
 
 	@Override
@@ -55,9 +54,10 @@ public class AuditorAuditRecordListMineService implements AbstractListService<Au
 
 		Collection<AuditRecord> result;
 		Principal principal;
+		int item = request.getModel().getInteger("item");
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyByAuditorId(principal.getActiveRoleId());
+		result = this.repository.findManyByAuditorIdByItemId(principal.getActiveRoleId(), item);
 
 		return result;
 	}
