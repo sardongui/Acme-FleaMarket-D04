@@ -24,6 +24,9 @@
 			code="authenticated.item.form.button.newMessage" 
 			action="/authenticated/message/create?item=${item}&forum=${forum}"/>
 			
+			<acme:form-submit method="get" code="authenticated.audit-record.form.button.list"
+	 		action="/authenticated/audit-record/list?item=${item}"/>
+			
 	</jstl:if>
 	
 	<acme:form-return code="authenticated.item.form.button.return"/>

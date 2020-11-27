@@ -24,8 +24,10 @@ public class Dashboard implements Serializable{
 	Integer						numberAdvertisement;
 
 	Double						minDiscountAdvertisements;
+	String 						minDiscount;
 
 	Double						maxDiscountAdvertisements;
+	String 						maxDiscount;
 
 	Double						averageSmallDiscountAdvertisements;
 	

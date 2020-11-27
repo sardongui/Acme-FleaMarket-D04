@@ -14,3 +14,4 @@ authenticated.item.form.button.return= Return
 
 authenticated.item.form.button.viewMessages = View forum
 authenticated.item.form.button.newMessage = New forum message
+authenticated.audit-record.form.button.list = List Audit Record

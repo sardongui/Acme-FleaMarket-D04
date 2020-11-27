@@ -112,7 +112,7 @@
 		<property name="picture" value="https://png.pngtree.com/picture-new1.jpg"/>
 		<property name="title" value="Ejemplo1"/>
 		<property name="moment" value="2020/10/25 10:21"/>
-		<property name="deadline" value="2021/01/15 23:00"/>
+		<property name="deadline" value="2020/12/20 23:00"/>
 		<property name="body" value="Esto es una novedad de ejemplo (1)"/>
 		<property name="confirmed" value="true" />
 	</bean>
@@ -122,7 +122,7 @@
 		<property name="picture" value="https://png.pngtree.com/picture-new2.jpg"/>
 		<property name="title" value="Ejemplo2"/>
 		<property name="moment" value="2020/10/25 10:25"/>
-		<property name="deadline" value="2021/01/01 23:00"/>
+		<property name="deadline" value="2021/02/20 23:00"/>
 		<property name="body" value="Esto es una novedad de ejemplo (2)"/>
 		<property name="relatedNews" value="http://www.related-new1.com" />
 		<property name="confirmed" value="true" />
@@ -619,18 +619,18 @@
 	
 	<!-- Messages -->
 	<bean id="message1" class="acme.entities.messages.Message">
-		<property name="title" value="Poca salida"/>
+		<property name="title" value="Me gusta"/>
 		<property name="creation" value="2020/11/08 16:40"/>
-		<property name="tags" value="advertencia"/>
-		<property name="body" value="Este producto no tiene la salida que esperábamos."/>
+		<property name="tags" value="positivo"/>
+		<property name="body" value="Me gusta este producto."/>
 		<property name="forum" ref="forum1" />
 	</bean>
 	
 	<bean id="message2" class="acme.entities.messages.Message">
 		<property name="title" value="Buena venta"/>
 		<property name="creation" value="2020/11/06 11:23"/>
-		<property name="tags" value="acierto, critica"/>
-		<property name="body" value="Parece que este producto esta teniendo bastante salida, deberíamos disponer de un stock alto."/>
+		<property name="tags" value="acierto,critica"/>
+		<property name="body" value="Buena calidad."/>
 		<property name="forum" ref="forum1" />
 	</bean>
 	
@@ -642,6 +642,7 @@
 		<property name="forum" ref="forum2" />
 	</bean>
 	
+	
 	<!-- Forums -->
 	<bean id="forum1" class="acme.entities.forums.Forum">
 		<property name="item" ref="item1" />
@@ -650,6 +651,7 @@
 	<bean id="forum2" class="acme.entities.forums.Forum">
 		<property name="item" ref="item2" />
 	</bean>
+	
 	
 	<!-- Sponsor -->
 	<bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">

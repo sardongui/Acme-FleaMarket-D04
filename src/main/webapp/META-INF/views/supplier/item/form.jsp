@@ -12,6 +12,6 @@
 	<acme:form-textbox code="supplier.item.form.label.itemCategory" path="itemCategory"/>
 	<acme:form-money code="supplier.item.form.label.price" path="price"/>
 	<acme:form-url code="supplier.item.form.label.link" path="link"/>
-	
+			
 	<acme:form-return code="supplier.item.form.button.return"/>
 </acme:form>

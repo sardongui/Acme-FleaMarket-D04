@@ -1,0 +1,10 @@
+authenticated.audit-record.form.label.creationMoment = Creation moment
+authenticated.audit-record.form.label.title = Title
+authenticated.audit-record.form.label.body = Body
+authenticated.audit-record.form.label.status = Status
+
+authenticated.audit-record.list.label.creationMoment=Creation moment
+authenticated.audit-record.list.label.title=Title
+authenticated.audit-record.list.label.item=Item
+
+authenticated.audit-record.form.button.return=Return 
